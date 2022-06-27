@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head.html">
+    <title>Home page</title>
+</head>
+<body>
+<div th:insert="fragments/header.html"/>
+<p th:text="|ID ${store.getId()}|"></p>
+<p th:text="${store.getName()}"></p>
+<p th:text="${store.getPostCode()}"></p>
+</body>
+</html>

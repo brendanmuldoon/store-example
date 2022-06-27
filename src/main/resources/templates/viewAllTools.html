@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head.html">
+    <title>View All Tools</title>
+</head>
+<body>
+<div th:insert="fragments/header.html"/>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Description</td>
+        <td>Hire Price</td>
+    </tr>
+    <tr th:each="tool: ${tools}">
+        <td th:text="${tool.getId()}"></td>
+        <td th:text="${tool.getDescription()}"></td>
+        <td th:text="${tool.getHirePrice()}"></td>
+        <td>
+            <a th:href="@{'/api/tools/'+ ${tool.getId()}}">View</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
